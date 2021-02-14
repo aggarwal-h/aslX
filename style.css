@@ -1,0 +1,174 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.abs {
+  position: absolute;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: lightblue;
+}
+
+body {
+  bottom: 0;
+  font-family: "Titillium Web", sans-serif;
+  color: white;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: 0px 0px;
+  overflow: hidden;
+  background-color: #4939f5;
+}
+
+.mt4 {
+  margin-top: 0px;
+}
+
+.back_split {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0%;
+  overflow-x: hidden;
+  background-color: #5327ff;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.center {
+  margin: 0 auto;
+  width: 700px;
+}
+
+.detected-text {
+  font-size: 30px;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.input_video {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  border-radius: 20px;
+  width: 1280px;
+  height: 720px;
+  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+}
+.input_video.selfie {
+  transform: scale(-1, 1);
+}
+
+.output_canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  border-radius: 20px;
+  width: 1280px;
+  height: 720px;
+}
+
+.logo {
+  bottom: 10px;
+  right: 20px;
+}
+.logo .title {
+  color: white;
+  font-size: 28px;
+}
+
+.loading {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  backface-visibility: hidden;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.loaded .loading {
+  opacity: 0;
+}
+
+.loaded .input_video {
+  opacity: 1;
+}
+
+.planets {
+  position: absolute;
+  background-color: #f8e71c;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+.planets:after,
+.planets:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.planets:after {
+  left: -10px;
+  top: -5px;
+  background-color: #c7c2a6;
+  transform-origin: 25px 20px;
+  animation: axis 1s linear infinite;
+}
+.planets:before {
+  left: -25px;
+  top: -15px;
+  background-color: #009bff;
+  transform-origin: 30px 20px;
+  animation: axis 2s linear infinite;
+}
+
+@keyframes axis {
+  0% {
+    transform: rotateZ(0deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotateZ(360deg) translate3d(0, 0, 0);
+  }
+}
+
+.detected {
+  font-size: 30px;
+  margin-bottom: 10px;
+}

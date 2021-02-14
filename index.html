@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>aslX</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.1/control_utils.css"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.1/camera_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.1/control_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.1/drawing_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.1/hands.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+
+    <script src="https://unpkg.com/fingerpose@0.0.2/dist/fingerpose.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="back_split">
+      <div class="centered">
+        <video class="input_video"></video>
+        <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+        <div class="loading">
+          <div class="planets"></div>
+          <h1 style="margin-top: 10rem">Loading...</h1>
+        </div>
+        <div class="control-panel" style="display: none"></div>
+      </div>
+      <div>
+        <a class="abs logo" href="#" target="_blank">
+          <div
+            style="display: flex; align-items: center; bottom: 0; right: 10px"
+          >
+            <img
+              class="logo"
+              src="./favicon.ico"
+              alt="logo"
+              style="height: 30px; margin-right: 10px; margin-bottom: 5px"
+            />
+            <span class="title">aslX</span>
+          </div>
+        </a>
+        <div style="position: absolute; display: flex; align-items: left; bottom: 0; left: 10px">
+          <span class="detected"></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
