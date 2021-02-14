@@ -45,7 +45,15 @@ function setText(text) {
 
 const knownGestures = [
   fp.Gestures.ThumbsUpGesture,
-  fp.Gestures.VictoryGesture,
+  // fp.Gestures.VictoryGesture,
+  HelloLeft,
+  Hello,
+  HelloRight,
+  IndexUp,
+  WhatLeft,
+  WhatRight,
+  WeatherLeft,
+  WeatherRight,
 ];
 const GE = new fp.GestureEstimator(knownGestures);
 
@@ -150,9 +158,6 @@ async function drawHands(landmarks, ctx) {
     setText(recognizeRightHandGestures(identifiedGestures));
   } else if (identifiedGestures[0] && identifiedGestures[1]) {
     setText(recognizeBothHandGestures(identifiedGestures));
-  }
-  if (identifiedGestures[1] && identifiedGestures[1] !== undefined) {
-    console.log(identifiedGestures[1].name);
   }
   
 }
