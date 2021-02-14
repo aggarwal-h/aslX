@@ -36,13 +36,17 @@
   <body>
     <div class="back_split">
       <div class="centered">
-        <video class="input_video"></video>
-        <canvas class="output_canvas" width="1280px" height="720px"></canvas>
-        <div class="loading">
-          <div class="planets"></div>
-          <h1 style="margin-top: 10rem">Loading...</h1>
+        <div class="video_canvas">
+          <video class="input_video"></video>
+          <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+          <div class="loading">
+            <div class="planets"></div>
+            <h1 style="margin-top: 10rem">Loading...</h1>
+          </div>
+          <div class="control-panel" style="display: none"></div>
+          <span class="detected"></span>
         </div>
-        <div class="control-panel" style="display: none"></div>
+        
       </div>
       <div>
         <a class="abs logo" href="#" target="_blank">
@@ -58,7 +62,15 @@
             <span class="title">aslX</span>
           </div>
         </a>
-        <div style="position: absolute; display: flex; align-items: left; bottom: 0; left: 10px">
+        <div
+          style="
+            position: absolute;
+            display: flex;
+            align-items: left;
+            bottom: 0;
+            left: 10px;
+          "
+        >
           <span class="detected"></span>
         </div>
       </div>
@@ -71,6 +83,9 @@
     <script src="./Gestures/IndexUp.js" type="text/javascript"></script>
     <script src="./Gestures/What.js" type="text/javascript"></script>
     <script src="./Gestures/Weather.js" type="text/javascript"></script>
+    <script src="./Gestures/HowAreYou.js" type="text/javascript"></script>
+    <script src="./Gestures/I.js" type="text/javascript"></script>
+    <script src="./Gestures/You.js" type="text/javascript"></script>
     <script src="./configuration.js" type="text/javascript"></script>
     <script src="./script.js"></script>
   </body>

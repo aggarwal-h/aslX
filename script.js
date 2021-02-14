@@ -1,6 +1,8 @@
 const WIDTH = 1280;
 HEIGHT = 720;
 
+let sentenceArray = [], sentence = "";
+
 const outputCanvas = document.querySelector(".output_canvas");
 outputCanvas.setAttribute("width", WIDTH);
 outputCanvas.setAttribute("height", HEIGHT);
@@ -35,6 +37,32 @@ function recognizeBothHandGestures(identifiedGestures) {
   return null;
 }
 
+function addToSentence(word) {
+  if (word && sentenceArray[sentenceArray.length-1] !== word){
+    sentenceArray.push(word)
+  }
+  buildSentence();
+  updateSentenceOnScreen();
+  console.log(sentenceArray);
+}
+
+function buildSentence() {
+  sentence = sentenceArray.join(' ');
+  updateSentenceOnScreen();
+}
+
+function clearSentenceArray() {
+  sentenceArray = [];
+}
+
+function clearSentence() {
+  sentence = "";
+}
+
+function updateSentenceOnScreen() {
+  setText(sentence);
+}
+
 function setText(text) {
   if (text) {
     document.querySelector(".detected").innerText = text;
@@ -45,15 +73,14 @@ function setText(text) {
 
 const knownGestures = [
   fp.Gestures.ThumbsUpGesture,
-  // fp.Gestures.VictoryGesture,
-  HelloLeft,
-  Hello,
-  HelloRight,
+  // Hello,
   IndexUp,
   WhatLeft,
   WhatRight,
   WeatherLeft,
   WeatherRight,
+  I,
+  You,
 ];
 const GE = new fp.GestureEstimator(knownGestures);
 
@@ -99,6 +126,11 @@ async function onResults(results) {
 
     let landmarks = [leftHandMarks, rightHandMarks];
     drawHands(landmarks, canvasCtx);
+  } else {
+    buildSentence();
+    updateSentenceOnScreen();
+    clearSentence();
+    clearSentenceArray();
   }
   canvasCtx.restore();
 }
@@ -153,12 +185,13 @@ async function drawHands(landmarks, ctx) {
   ];
 
   if (identifiedGestures[0] && !identifiedGestures[1]) {
-    setText(recognizeLeftHandGestures(identifiedGestures));
+    addToSentence(recognizeLeftHandGestures(identifiedGestures));
   } else if (!identifiedGestures[0] && identifiedGestures[1]) {
-    setText(recognizeRightHandGestures(identifiedGestures));
+    addToSentence(recognizeRightHandGestures(identifiedGestures));
   } else if (identifiedGestures[0] && identifiedGestures[1]) {
-    setText(recognizeBothHandGestures(identifiedGestures));
+    addToSentence(recognizeBothHandGestures(identifiedGestures));
   }
+  // if (identifiedGestures[1]) console.log(identifiedGestures[1].name);
   
 }
 
@@ -223,8 +256,8 @@ camera.start();
 new ControlPanel(controlsElement, {
   selfieMode: true,
   maxNumHands: 2,
-  minDetectionConfidence: 0.8,
-  minTrackingConfidence: 0.8,
+  minDetectionConfidence: 0.5,
+  minTrackingConfidence: 0.5,
 })
   .add([fpsControl])
   .on((options) => {

@@ -172,3 +172,8 @@ body {
   font-size: 30px;
   margin-bottom: 10px;
 }
+
+.video_canvas {
+  width: 1280px;
+  height: 800px;
+}

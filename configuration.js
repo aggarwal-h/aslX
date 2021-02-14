@@ -63,10 +63,16 @@ const words_both = {
   },
   HelloLeft: {
     HelloRight: {
-      message: "Hello",
+      message: "Hello!",
       display: true,
     },
   },
+  // I: {
+  //   thumbs_up: {
+  //     message: "Help!",
+  //     display: true,
+  //   },
+  // },
 };
 
 const words_left = {
@@ -75,9 +81,29 @@ const words_left = {
     display: true,
   },
   HelloLeft: {
-    message: "HelloLeft",
+    message: "hello",
     display: true,
   },
+  Hello: {
+    message: "hello",
+    display: true,
+  },
+  HelloRight: {
+    message: "hello",
+    display: true,
+  },
+  thumbs_up: {
+    message: "like",
+    display: true,
+  },
+  I: {
+    message: "I",
+    display: true,
+  },
+  you: {
+    message: "you",
+    display: true,
+  }
 };
 
 const words_right = {
@@ -89,4 +115,37 @@ const words_right = {
     message: "HelloRight",
     display: true,
   },
+  Hello: {
+    message: "hello",
+    display: true,
+  },
+  HelloRight: {
+    message: "hello",
+    display: true,
+  },
+  thumbs_up: {
+    message: "like",
+    display: true,
+  },
+  I: {
+    message: "I",
+    display: true,
+  },
+  you: {
+    message: "you",
+    display: true,
+  }
 };
+
+const dynamic_words = {
+  How1: {
+    How2: {
+      message: "How",
+      display: true,
+    },
+    thumbs_up: {
+      message: "How",
+      display: true,
+    }
+  }
+}
